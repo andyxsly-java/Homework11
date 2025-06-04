@@ -6,11 +6,13 @@ public class Main {
         task2(); // Задача 2
         task3(); // Задача 3
     }
+
     //Задача 1
     public static void task1() {
         int year = 2019;
         printYear(year);
     }
+
     public static void printYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
             System.out.println(year + " год — високосный год");
@@ -18,12 +20,14 @@ public class Main {
             System.out.println(year + " год — невисокосный год");
         }
     }
+
     //Задача 2
     public static void task2() {
         int clientAndroid = 1;
         int clientDeviceYear = 2019;
         suggestApp(clientAndroid, clientDeviceYear);
     }
+
     public static void suggestApp(int osType, int deviceYear) {
         int currentYear = LocalDate.now().getYear();
         boolean outdateDevice = deviceYear < 2015;
@@ -40,6 +44,7 @@ public class Main {
             System.out.println("Установите обычную версию приложения для Android по ссылке");
         }
     }
+
     //Задача 3
     public static void task3() {
         int deliveryDistance = 95;
@@ -50,15 +55,16 @@ public class Main {
             System.out.println("Доставка не осуществляется на расстояние свыше 100 км");
         }
     }
-        public static int deliveryDays (int interval){
-            if (interval <= 20) {
-                return 1;
-            } else if (interval <= 60){
-                return 2;
-            } else if (interval <= 100) {
-                return 3;
-            } else {
-                return -1;
-            }
+
+    public static int deliveryDays(int interval) {
+        if (interval <= 20) {
+            return 1;
+        } else if (interval <= 60) {
+            return 2;
+        } else if (interval <= 100) {
+            return 3;
+        } else {
+            return -1;
         }
     }
+}
