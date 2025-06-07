@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static void printYear(int year) {
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год — високосный год");
         } else {
             System.out.println(year + " год — невисокосный год");
@@ -30,7 +30,7 @@ public class Main {
 
     public static void suggestApp(int osType, int deviceYear) {
         int currentYear = LocalDate.now().getYear();
-        boolean outdateDevice = deviceYear < 2015;
+        boolean outdateDevice = deviceYear < currentYear;
         if (osType == 0 && outdateDevice) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         }
@@ -48,7 +48,7 @@ public class Main {
     //Задача 3
     public static void task3() {
         int deliveryDistance = 95;
-        int deliveryTime = deliveryDays(deliveryDistance);
+        int deliveryTime = calculateDeliveryDays(deliveryDistance);
         if (deliveryTime > 0) {
             System.out.println("Потребуется дней: " + deliveryTime);
         } else {
@@ -56,7 +56,7 @@ public class Main {
         }
     }
 
-    public static int deliveryDays(int interval) {
+    public static int calculateDeliveryDays(int interval) {
         if (interval <= 20) {
             return 1;
         } else if (interval <= 60) {
